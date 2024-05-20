@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emergent-CodingChallenge", "Emergent-CodingChallenge.csproj", "{A7753DB2-0DAD-40A0-8A9C-862D7C50EC1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7753DB2-0DAD-40A0-8A9C-862D7C50EC1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7753DB2-0DAD-40A0-8A9C-862D7C50EC1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7753DB2-0DAD-40A0-8A9C-862D7C50EC1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7753DB2-0DAD-40A0-8A9C-862D7C50EC1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {701757DB-55E1-4D31-BD59-31CD27B2C737}
+	EndGlobalSection
+EndGlobal

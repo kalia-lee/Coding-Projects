@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Github\\2024-04-29_Kalia_Lee\\Emergent-CodingChallenge\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Emergent-CodingChallenge.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Emergent-CodingChallenge.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Github\\2024-04-29_Kalia_Lee\\Emergent-CodingChallenge\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Github\\2024-04-29_Kalia_Lee\\Emergent-CodingChallenge\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Github\\2024-04-29_Kalia_Lee\\Emergent-CodingChallenge\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Github\\2024-04-29_Kalia_Lee\\Emergent-CodingChallenge\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Emergent-CodingChallenge.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Emergent-CodingChallenge.props",
+      "PackagePath": "build\\Emergent-CodingChallenge.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Emergent-CodingChallenge.props",
+      "PackagePath": "buildMultiTargeting\\Emergent-CodingChallenge.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Emergent-CodingChallenge.props",
+      "PackagePath": "buildTransitive\\Emergent-CodingChallenge.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

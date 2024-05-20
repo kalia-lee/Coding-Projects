@@ -1,0 +1,17 @@
+.label {
+    color: white;
+    padding: 5px;
+}
+.error {
+    color: #a33e41; /* Red */
+    background-color: #f3dfe0;
+    border-style: solid;
+    border-color: #a33e41; /* Red */
+    border-radius: 5px;
+    width: 45%;
+}
+.upload {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}

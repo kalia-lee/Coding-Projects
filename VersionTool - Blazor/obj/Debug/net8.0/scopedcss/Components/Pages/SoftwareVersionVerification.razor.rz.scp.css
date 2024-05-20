@@ -1,0 +1,19 @@
+.label[b-gr4ghie63s] {
+    color: white;
+    padding: 8px;
+}
+.danger[b-gr4ghie63s] {
+    color: #a33e41; /* Red */
+    background-color: #f3dfe0;
+    border-style: solid;
+    border-color: #a33e41; /* Red */
+    border-radius: 5px;
+}
+
+h4[b-gr4ghie63s] {
+    padding-top: 10px;
+}
+
+input[b-gr4ghie63s] {
+    width: 40%;
+}

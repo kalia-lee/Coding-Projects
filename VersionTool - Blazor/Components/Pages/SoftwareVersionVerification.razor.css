@@ -1,0 +1,19 @@
+﻿.label {
+    color: white;
+    padding: 8px;
+}
+.danger {
+    color: #a33e41; /* Red */
+    background-color: #f3dfe0;
+    border-style: solid;
+    border-color: #a33e41; /* Red */
+    border-radius: 5px;
+}
+
+h4 {
+    padding-top: 10px;
+}
+
+input {
+    width: 40%;
+}

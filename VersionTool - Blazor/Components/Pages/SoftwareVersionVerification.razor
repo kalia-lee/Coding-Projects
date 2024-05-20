@@ -1,0 +1,122 @@
+@page "/softwareversionverifier"
+@using System.Text.RegularExpressions
+@rendermode InteractiveServer
+
+<PageTitle>Software Version Tool</PageTitle>
+
+<input placeholder="Enter software version number..." @bind="version" @bind:event="oninput" @onkeydown="@Enter" />
+<button @onclick="ValidateUserVersion">Get Software</button>
+
+<h4>Available Software</h4>
+@if (!String.IsNullOrEmpty(error))
+{
+    <span class="label danger">
+        @error
+    </span>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Software</th>
+            <th>Version</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var software in validSoftware)
+            {
+                <tr>
+                    <td>@software.Name</td>
+                    <td>@software.Version</td>
+                </tr>
+            }
+
+    </tbody>
+</table>
+
+@code {
+    private List<Software> validSoftware = new();
+    private string version = "";
+    private string error = "";
+
+    private int CompareVersion(string version1, string version2)
+    {
+        var v1 = version1.Split('.').Select(int.Parse).ToList();
+        var v2 = version2.Split('.').Select(int.Parse).ToList();
+
+        while (v1.Count > v2.Count) v2.Add(0);
+        while (v2.Count > v1.Count) v1.Add(0);
+
+        for (var i = 0; i < v1.Count; i++)
+        {
+            if (v1[i] < v2[i]) return -1;
+            else if (v1[i] > v2[i]) return 1;
+        }
+
+        return 0;
+
+        // If version1< version2, return -1.
+        // If version1 > version2, return 1.
+        // Otherwise, return 0.
+    }
+
+    private void ValidateUserVersion() {
+        error = "";
+        validSoftware = new List<Software>();
+        // 1. Check that numbers are non negative
+        // 2. Check that the version number is no greater than 5 parts
+        // 3. Check that string is "clean" or in the format we expect x.x.x.x
+
+        // Regex: ^ - We want to match at the beginning of the string number 0-9
+        // with any following digits that match 0 or more times
+        // Following that, we create a group to match the "." character along with 
+        // what was mentioned above, 0 or more times 
+        var regexItem = new Regex("^[0-9]\\d*(\\.[0-9]\\d*)*$");
+        var isValidFormat = regexItem.IsMatch(version);
+        if (!isValidFormat)
+        {
+            error = "Invalid characters. Please enter again";
+            return;
+        }
+        var versionList = version.Split('.').Select(int.Parse).ToList();
+        var isValidNumbers = versionList.TrueForAll(number => number >= 0);
+        var isValidLength = versionList.Count <= 5;
+
+        if(!isValidNumbers && !isValidLength)
+        {
+            error = "Invalid version. Please enter again";
+        } 
+        else if(!isValidNumbers)
+        {
+            error = "Invalid version numbers. Please enter again";
+        } 
+        else if(!isValidLength)
+        {
+            error = "Invalid version length. Please enter again";
+        } 
+        else
+        {
+            GetSoftware();
+        };
+    }
+
+    private void GetSoftware()
+    {
+        // return software greater than the version the user entered
+        List<Software> softwareList = SoftwareManager.GetAllSoftware().ToList();
+        for(int i = 0; i < softwareList.Count; i++)
+        {
+            if (CompareVersion(softwareList[i].Version, version) == 1)
+            {
+                validSoftware.Add(softwareList[i]);
+            }
+        }
+    }
+
+    public void Enter(KeyboardEventArgs e)
+    {
+        if (e.Code == "Enter" || e.Code == "NumpadEnter")
+        {
+            ValidateUserVersion();
+        }
+    }
+}
